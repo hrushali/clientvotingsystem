@@ -1,0 +1,79 @@
+<!-- 
+      <form action="" [formGroup]="votes" (submit)="addvotes()">
+        <div class="candidate-list"  >
+          <h2>Choose Your Candidate</h2>
+         
+          <div class="candidates" >
+            <div *ngFor="let item of clist">
+            <div class="candidate-card">
+              <h3>{{item.c_name}}</h3>
+              <p>Party: {{item.partyname}}</p>
+              <button class="vote-btn" routerLink="/submitvote">Vote</button>
+            </div>
+            </div>
+       
+            
+          </div>
+        </div>
+      </form> -->
+
+
+      
+
+<nav class="navbar">
+  <div class="navbar-left">
+    <span class="navbar-brand">Online Voting System</span>
+  </div>
+
+  <div class="navbar-right">
+    <a routerLink="/home2" class="nav-link">Home</a>
+    <a routerLink="/form" class="nav-link">Vote</a>
+    <a routerLink="/about1" class="nav-link">About</a>
+    <a routerLink="/contact1" class="nav-link">Contact For Queries</a>
+    <a routerLink="/con" class="nav-link">Email for Queries</a>
+    <a routerLink="/" class="logout-btn">Logout</a>
+  </div>
+</nav>
+
+
+
+
+
+      <div class="bod">
+      <div class="background-image">
+
+       
+        
+      <form [formGroup]="votes" (ngSubmit)="addvotes()">
+        <div class="candidate-list">
+          <h2>Choose Your Candidate</h2>
+          
+          <div class="candidates">
+       
+            <div *ngFor="let item of clist">
+              <div class="candidate-card">
+                <h3>{{ item.c_name }}</h3>
+                <p>Party: {{ item.partyname }}</p>
+      
+                <!-- Button triggers selectCandidate method and sets c_id -->
+                <button 
+                  class="vote-btn" 
+                  (click)="selectCandidate(item.c_id)"
+                  type="button">
+                  Vote
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      <br><br>
+        <!-- Hidden input to bind voterID -->
+        <input type="hidden" formControlName="voterID" [value]="voterID" />
+      
+        <!-- Submit button for the form -->
+    <button type="submit" [disabled]="!votes.valid" >Submit Vote</button>
+      </form>
+      </div>
+      </div>
+      
+    

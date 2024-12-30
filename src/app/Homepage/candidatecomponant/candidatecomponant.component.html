@@ -1,0 +1,32 @@
+<!-- <p>user-logincomponant works!</p> -->
+
+
+  
+
+
+<div class="login-container">
+    <h2>Candidates Register</h2>
+    <form [formGroup]="candidates" (ngSubmit)="addcandidate()">
+      <div class="form-group">
+        <label for="username">candidate id</label>
+        <input type="text" id="username" name="username" placeholder="Enter your candidate ID" formControlName="c_id" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">candidate name</label>
+        <input type="text" id="password" name="password" placeholder="Enter your password" formControlName="c_name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="partyname">Party name</label>
+        <input type="text" id="partyname" name="partyname" placeholder="Enter your partyname" formControlName="partyname" required>
+      </div>
+
+      <button type="submit" class="login-btn" (click)="reloadPage()">Login</button>
+    </form>
+
+    
+  </div>
+  
+
+

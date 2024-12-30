@@ -1,0 +1,31 @@
+<nav>
+  <h2>Online Voting System</h2>
+  <ul>
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/result">Results</a></li>
+      <li><a routerLink="/about">About</a></li>
+      <li><a routerLink="/userlogin">Contact For Queries</a></li>
+
+      <div class="dropdown">
+        <li><a href="#">Login </a></li>
+          <div class="dropdown-content">
+            <a routerLink="/Admin">Admin Login</a>
+            <a routerLink="/userlogin">User Login</a>
+          </div>
+          </div>
+  </ul>
+</nav>
+
+
+<div class="result-background">
+<div class="result-container">
+    <div *ngFor="let result of resultlist" class="card">
+      <div class="card-header">
+        <h3>{{ result.candidateId }}</h3>
+      </div>
+      <div class="card-body">
+        <p>Total Votes: <strong>{{ result.voteCount }}</strong></p>
+      </div>
+    </div>
+  </div>
+</div>

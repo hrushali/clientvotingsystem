@@ -1,0 +1,150 @@
+/* Navbar */
+nav {
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    justify-content: space-between;
+    border-bottom: 2px solid #f39c12;
+}
+
+nav h2 {
+    color: #f39c12;
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #f39c12;
+    color: #000;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.9);
+    min-width: 150px;
+    z-index: 1;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    border-bottom: 1px solid #444;
+}
+
+.dropdown-content a:hover {
+    background-color: #f39c12;
+    color: #000;
+}
+
+.background-image-section {
+    background: url('vote2.jpg') no-repeat center center fixed;
+    background-size: cover;
+    padding: 20px 20px;
+    min-height: 80vh; /* Ensures the section covers the full viewport height */
+    background-size: cover;
+    color: #fff;
+}
+/* Main Content Styling */
+.main-content {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+header h1 {
+    font-size: 36px;
+    margin: 10px 0;
+    color: #f39c12;
+}
+
+header p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.intro {
+    margin: 20px 0;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.services {
+    text-align: left;
+    margin: 20px auto;
+    max-width: 600px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.services h3 {
+    color: #f39c12;
+    text-align: center;
+}
+
+.services ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.services ul li {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #f39c12;
+    border-top: 2px solid #f39c12;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+footer a:hover {
+    color: #f39c12;
+    text-decoration: underline;
+}

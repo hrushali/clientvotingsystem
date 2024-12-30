@@ -1,0 +1,188 @@
+.bod{
+    font-family: Arial, sans-serif;
+    margin-bottom: 500px;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-image: url('vote1.jpg'); */
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.7); /* Darken the image for text visibility */
+    z-index: 1;
+   
+}
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('vote1.jpg'); /* Replace with your image URL */
+  background-size: cover;
+  background-position: center;
+  /* filter: brightness(0.7); */
+  z-index: 1;
+  
+}
+
+.container {
+    max-width: 800px;
+    
+    margin: 50px auto;
+    background:#fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+h1 {
+    text-align: center;
+    color: #333;
+}
+p {
+    text-align: center;
+    color: #666;
+}
+form {
+    margin-top: 20px;
+}
+label {
+    display: block;
+    margin: 15px 0 5px;
+    font-weight: bold;
+    color: #333;
+}
+input, textarea, select {
+    width:100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 40%;
+    margin-left: 250px;
+}
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+.alternative-contact {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.alternative-contact p {
+    margin: 5px 0;
+    color: #333;
+}
+.faq {
+    margin-top: 30px;
+}
+.faq h2 {
+    color: #333;
+}
+.faq-details {
+    margin-top: 15px;
+}
+.faq-details summary {
+    font-weight: bold;
+    color: #555;
+    cursor: pointer;
+}
+.faq-details p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(45deg, #4CAF50, #2196F3);
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  /* Navbar Left: System Name */
+  .navbar-left .navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-left .navbar-brand:hover {
+    color: #FFD700;
+  }
+  
+  /* Navbar Right: Links */
+  .navbar-right {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 0.8rem;
+    border-radius: 20px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #FFD700;
+  }
+  
+  .logout-btn {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 0.8rem;
+    border-radius: 20px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .logout-btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #FFD700;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .navbar-right {
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+    }
+  
+    .nav-link,
+    .dropbtn {
+      width: 100%;
+      text-align: center;
+    }
+  }

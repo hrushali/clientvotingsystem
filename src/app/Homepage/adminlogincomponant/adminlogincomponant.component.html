@@ -1,0 +1,73 @@
+<nav>
+  <h2>Online Voting System</h2>
+  <ul>
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/result">Results</a></li>
+      <li><a routerLink="/about">About</a></li>
+      <li><a routerLink="/userlogin">Contact For Queries</a></li>
+
+      <div class="dropdown">
+        <li><a href="#">Login </a></li>
+          <div class="dropdown-content">
+            <a routerLink="/Admin">Admin Login</a>
+            <a routerLink="/userlogin">User Login</a>
+          </div>
+          </div>
+  </ul>
+</nav>
+
+
+<div class="background-image-section">
+
+<div class="login-container">
+  <h2>Admin Login</h2>
+
+  <form [formGroup]="Admin" (ngSubmit)="adminlogin()">
+    <!-- Voter ID Input -->
+    <div class="form-group">
+      <label for="AdminID">Admin ID</label>
+      <input
+        type="number"
+        id="AdminID"
+        formControlName="adminID"
+        placeholder="Enter your Admin ID"
+        required
+      />
+      <div *ngIf="f.adminID.invalid && f.adminID.touched" class="error-message">
+        Voter ID is required.
+      </div>
+    </div>
+
+    <!-- Password Input -->
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        formControlName="password"
+        placeholder="Enter your password"
+        required
+      />
+      <div *ngIf="f.password.invalid && f.password.touched" class="error-message">
+        Password is required.
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="login-btn" [disabled]="Admin.invalid">Login</button>
+  </form>
+
+  <!-- Error Message -->
+  <div *ngIf="loginerror" class="error-message">
+    {{ loginerror }}
+  </div>
+
+  <div class="forgot-password">
+    <a href="#">Forgot Password?</a>
+  </div>
+
+  <!-- <div class="forgot-password">
+    <a routerLink="/signup" (click)="reloadPage()" >Register Now</a>
+  </div> -->
+</div>
+</div>

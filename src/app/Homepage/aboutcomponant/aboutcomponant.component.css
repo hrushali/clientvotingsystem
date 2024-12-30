@@ -1,0 +1,229 @@
+.background-image-section {
+    background: url('vote2.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 60px 20px; /* Space around the content */
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+/* Navbar */
+nav {
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    justify-content: space-between;
+    border-bottom: 2px solid #f39c12;
+}
+
+nav h2 {
+    color: #f39c12;
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #f39c12;
+    color: #000;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.9);
+    min-width: 150px;
+    z-index: 1;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    border-bottom: 1px solid #444;
+}
+
+.dropdown-content a:hover {
+    background-color: #f39c12;
+    color: #000;
+}
+
+/* About Us Page Styling */
+.about-container {
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    max-width: 900px;
+    text-align: center;
+}
+
+.about-container h1 {
+    color: #f39c12;
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.about-container p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin: 20px 0;
+    color: #ddd;
+}
+
+.about-container .features-list {
+    text-align: left;
+    margin: 20px auto;
+    max-width: 700px;
+    list-style-type: none;
+    padding: 0;
+}
+
+.about-container .features-list li {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    line-height: 1.5;
+    position: relative;
+    padding-left: 25px;
+}
+
+.about-container .features-list li:before {
+    content: '\2714';
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: #f39c12;
+    font-size: 18px;
+}
+
+.about-container .highlight {
+    color: #f39c12;
+    font-weight: bold;
+}
+
+/* Button Styling */
+.about-container .learn-more {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #f39c12;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.about-container .learn-more:hover {
+    background-color: #d35400;
+}
+
+/* Wrapper for aligning both sections */
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between the sections */
+    max-width: 900px; /* Centralize the content */
+    width: 100%; /* Responsive scaling */
+    align-items: center; /* Center-align all content */
+}
+
+/* Contact Us Section Styling */
+.contact-container {
+    background-color: rgba(0, 0, 0, 0.85); /* Similar to the about-container for a unified look */
+    backdrop-filter: blur(5px);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    max-width: 900px;
+    text-align: center;
+    color: #fff;
+    margin: 20px auto; /* Center alignment */
+}
+
+.contact-container h2 {
+    color: #f39c12; /* Match the highlight color */
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.contact-container p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #ddd;
+}
+
+.contact-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+}
+
+.contact-container li {
+    font-size: 16px;
+    color: #fff;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.contact-container li:before {
+    content: '\260E'; /* Telephone symbol for visual cue */
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: #f39c12;
+    font-size: 18px;
+}
+
+.contact-container strong {
+    color: #f39c12; /* Highlight for key details */
+}
+
+.contact-container a {
+    color: #f39c12;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-container a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,54 @@
+<nav>
+    <h2>Online Voting System</h2>
+    <ul>
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/result">Results</a></li>
+        <li><a routerLink="/about">About</a></li>
+        <li><a routerLink="/userlogin">Contact For Queries</a></li>
+
+        <div class="dropdown">
+          <li><a href="#">Login </a></li>
+            <div class="dropdown-content">
+              <a routerLink="/Admin">Admin Login</a>
+              <a routerLink="/userlogin">User Login</a>
+            </div>
+            </div>
+    </ul>
+</nav>
+
+<!-- Main Content -->
+<div class="background-image-section">
+<div class="main-content">
+   
+    <header>
+        <h1>Welcome to Voting System</h1>
+        <p>Experience a Secure and Transparent Voting Process</p>
+    </header>
+    <div *ngFor="let i of posterliste">
+        <marquee behavior="" direction="">{{i.pcontent}}</marquee>
+    </div>
+    <!-- Intro Section -->
+    <div class="intro">
+        <!-- <h2>Why Vo?</h2> -->
+         <p>Our Decentralized Voting System ensures secure, transparent, and tamper-proof elections without relying on a central authority.</p>
+        <p> Experience a reliable and user-friendly platform for fair voting.</p>
+    </div>
+
+    <!-- Services Section -->
+    <div class="services">
+        <h3>Our Features</h3>
+        <ul>
+            <li>Decentralized Voting Mechanism</li>
+            <li>Transparent and Tamper-Proof Results</li>
+            <li>Real-Time Vote Counting</li>
+            <!-- <li>Fully Secure with Blockchain Technology</li> -->
+            <li>Accessible to All Voters</li>
+        </ul>
+    </div>
+<!-- 
+    Footer Section -->
+    <!-- <footer>
+        <p>© 2024 VoteChain | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer> -->
+</div>
+</div>

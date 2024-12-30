@@ -1,0 +1,36 @@
+
+
+<nav class="navbar">
+    <div class="navbar-left">
+      <span class="navbar-brand">Online Voting System</span>
+    </div>
+  
+    <div class="navbar-right">
+      <a routerLink="/home2" class="nav-link">Home</a>
+      <a routerLink="/form" class="nav-link">Vote</a>
+      <a routerLink="/about1" class="nav-link">About</a>
+      <a routerLink="/contact1" class="nav-link">Contact For Queries</a>
+      <a routerLink="/con" class="nav-link">Email for Queries</a>
+      <a routerLink="/" class="logout-btn">Logout</a>
+    </div>
+  </nav>
+
+
+
+
+    <div class="bod">
+    <div class="auth-container">
+        <div class="auth-card">
+            <h2>Voter ID Authentication</h2>
+            <p>Please enter your voter ID to proceed</p>
+            <form id="auth-form" [formGroup]="voter" (ngSubmit)="getauthentication()" >
+                <div class="input-group">
+                    <label for="voter-id">Voter ID:</label>
+                    <input type="text" value={{voterID}} id="voter-id" placeholder={{voterID}} formControlName="voterID">
+                </div>
+                <button type="submit" class="submit-btn" >Submit</button>
+                <p id="warning-message" class="warning-message"></p>
+            </form>
+        </div>
+    </div>
+  </div>

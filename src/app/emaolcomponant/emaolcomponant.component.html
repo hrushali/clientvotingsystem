@@ -1,0 +1,42 @@
+
+<nav class="navbar">
+  <!-- Left Side: System Name -->
+  <div class="navbar-left">
+    <span class="navbar-brand">Online Voting System</span>
+  </div>
+
+  <!-- Right Side: Navigation Links -->
+  <div class="navbar-right">
+    <a routerLink="/home2" class="nav-link">Home</a>
+    <a routerLink="/form" class="nav-link">Vote</a>
+    <a routerLink="/about1" class="nav-link">About</a>
+    <a routerLink="/contact1" class="nav-link">Contact for Queries</a>
+    <a routerLink="/con" class="nav-link">Email for Queries</a>
+    <a routerLink="/" class="logout-btn">Logout</a>
+  </div>
+</nav>
+
+<body>
+
+
+<div class="container">
+   
+  
+
+
+  <form [formGroup]="contact" (ngSubmit)="onSubmit()">
+    <label for="subject">Subject</label>
+    <input id="subject" formControlName="subject" type="text" required />
+
+    <label for="message">Message</label>
+    <textarea id="message" formControlName="massage" required></textarea>
+
+    <button type="submit" [disabled]="!contact.valid">Submit</button>
+    <div *ngIf="responseMessage">
+      <p>{{ responseMessage }}</p>
+    </div>
+  </form>
+<br><br>
+  
+</div>
+</body>

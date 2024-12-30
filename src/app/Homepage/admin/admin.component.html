@@ -1,0 +1,146 @@
+<div class="home-container">
+    <div class="background-image">
+    <header>
+        <h1>Admin Dashboard - Voting System</h1>
+    </header>
+
+    <div class="dashboard-container"  >
+        <!-- Voting Results Overview -->
+        <div class="card" *ngFor="let i of resultlist">
+            <h3>Voting Results</h3>
+            {{i.candidateId}} 
+            <div class="vote-count" id="vote-count-a">  {{i.voteCount}}</div>
+            <!-- <div class="vote-count" id="vote-count-b">Team B: 0 votes</div>
+            <div class="vote-count" id="vote-count-c">Team C: 0 votes</div> -->
+        </div>
+
+        <!-- Manage Votes -->
+        <div class="card">
+            <h3>Teams</h3>
+            <div class="btn-container" *ngFor="let item of clist">
+                <button class="vote-btn" onclick="increaseVote('teamA')">{{item.partyname}}</button>
+            </div>
+        </div>
+
+        <!-- Add New Team -->
+        <div class="card">
+            <h3>Add New Candidates</h3>
+            <button class="vote-btn" routerLink="/candidatesignup">Add Team</button>
+        </div>
+    </div>
+
+    <!-- Voting Data Table -->
+    
+    <h1>Candidate List</h1>
+    
+    <div class="row" style="margin-left: 100px;">
+      <div class="col-6">
+        <table border="1">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>partyname</th>
+              <th>Oprations</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of clist" >
+              <td>{{ item.c_id }}</td>
+              <td>{{ item.c_name | uppercase }}</td>
+              <td>{{ item.partyname |uppercase}}</td>
+              <th><button (click)="deletecandidate(item.c_id)" (click)="reloadPage()">delete candidate</button></th>
+    
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <form action="" [formGroup]="poster" (submit)="addposter()">
+        <div class="form-group">
+            <label for="password">Poster content</label>
+            <input
+              type="text"
+              id="password"
+              formControlName="pcontent"
+              placeholder="Enter your poster content"
+              required
+            />
+        </div>
+      <!-- Submit Button -->
+      <button type="submit" class="login-btn" (click)="reloadPage()">Add poster</button>
+    </form>
+
+    <table>
+      <tr *ngFor="let i of posterliste">
+        <td>{{i.pcontent}}</td>
+        <th><button (click)="deleteposter(i.posterId)" (click)="reloadPage()" >delete </button></th>
+
+      </tr>
+    </table>
+
+    <script>
+        // Initialize vote counts for each team
+        let votes = {
+            teamA: 0,
+            teamB: 0,
+            teamC: 0
+        };
+
+        // Function to update the displayed vote counts
+        function updateVoteCounts() {
+            document.getElementById('vote-count-a').textContent = `Team A: ${votes.teamA} votes`;
+            document.getElementById('vote-count-b').textContent = `Team B: ${votes.teamB} votes`;
+            document.getElementById('vote-count-c').textContent = `Team C: ${votes.teamC} votes`;
+
+            // Update table
+            document.getElementById('table-team-a').textContent = votes.teamA;
+            document.getElementById('table-team-b').textContent = votes.teamB;
+            document.getElementById('table-team-c').textContent = votes.teamC;
+        }
+
+        // Function to increase vote for a team
+        function increaseVote(team) {
+            votes[team]++;
+            updateVoteCounts();
+        }
+
+        // Function to add a new team
+        function addNewTeam() {
+            const teamName = document.getElementById('team-name').value;
+            if (teamName) {
+                // Add the new team dynamically to the voting system
+                const teamId = teamName.toLowerCase().replace(/\s+/g, '');
+                if (!votes[teamId]) {
+                    votes[teamId] = 0;
+                    // Update the voting display
+                    const tableBody = document.getElementById('team-table');
+                    const newRow = document.createElement('tr');
+                    newRow.innerHTML = `<td>${teamName}</td><td id="table-${teamId}">0</td>`;
+                    tableBody.appendChild(newRow);
+
+                    // Add controls to manage the new team
+                    const buttonContainer = document.querySelector('.btn-container');
+                    const newButton = document.createElement('button');
+                    newButton.classList.add('vote-btn');
+                    newButton.textContent = `Add Vote to ${teamName}`;
+                    newButton.onclick = () => increaseVote(teamId);
+                    buttonContainer.appendChild(newButton);
+                    
+                    alert(`${teamName} has been added!`);
+                    updateVoteCounts();
+                } else {
+                    alert('This team already exists!');
+                }
+                document.getElementById('team-name').value = ''; // Clear the input field
+            } else {
+                alert('Please enter a team name.');
+            }
+        }
+
+        // Initialize with default votes
+        updateVoteCounts();
+    </script>
+</div>
+</div>

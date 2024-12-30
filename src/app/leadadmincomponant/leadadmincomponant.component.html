@@ -1,0 +1,50 @@
+<!-- <body> -->
+  <div class="background-image-div">
+<div class="admin-container">
+    <h1>Admin Management</h1>
+  
+    <!-- Add Admin Form -->
+    <div class="form-container">
+      <h2>Add Admin</h2>
+      <form [formGroup]="admin" (ngSubmit)="addadmin()">
+        <div class="form-group">
+          <label for="adminID">Admin ID:</label>
+          <input type="text" id="adminID" formControlName="adminID" placeholder="Enter Admin ID" />
+        </div>
+        <div class="form-group">
+          <label for="adminName">Admin Name:</label>
+          <input type="text" id="adminName" formControlName="adminname" placeholder="Enter Admin Name" />
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" formControlName="password" placeholder="Enter Password" />
+        </div>
+        <button type="submit" class="btn">Add Admin</button>
+      </form>
+    </div>
+  
+    <!-- Admin List -->
+    <div class="list-container">
+      <h2>Admin List</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of leadlist">
+            <td>{{ item.adminID }}</td>
+            <td>{{ item.adminname }}</td>
+            <td>
+              <button (click)="deleteadmin(item.adminID)" class="btn delete-btn"  (click)="reloadPage()">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<!-- </body> -->

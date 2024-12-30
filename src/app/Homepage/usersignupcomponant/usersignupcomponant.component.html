@@ -1,0 +1,32 @@
+
+
+
+<div class="home-container">
+    <div class="background-image">
+<form [formGroup]="voter" (ngSubmit)="getvoter()" >
+    <div class="login-container">
+        <h2>User Register</h2>
+    <label for="id">Voter ID:</label>
+    <input type="text" id="id" name="id" placeholder="Enter Your Valid Voter ID" formControlName="voterID" >
+    <br><br>
+    
+    <label for="name">UserName:</label>
+    <input type="text" id="name" name="name" placeholder="Enter your Email ID" formControlName="votername">
+    <br><br>
+
+    <label for="author">password:</label>
+    <input type="password" id="author" name="author" placeholder="Set your Password" formControlName="password">
+    <br><br>
+
+    <label for="location">Location:</label>
+    <input type="text" id="location" name="location" placeholder="Enter Your location " formControlName="createAt" formControlName="createAt">
+    <br><br>
+
+
+    
+
+    <button type="submit" (click)="reloadPage()">Create</button>
+</div>
+</form>
+</div>
+</div>
